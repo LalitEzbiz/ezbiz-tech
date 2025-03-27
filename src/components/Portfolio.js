@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image"; // ✅ Import the Next.js Image component
 
 const portfolioItems = [
   { name: "RETAIL GROWTH", color: "bg-orange-500", image: "/img/Retail-4-Growth.jpg" },
@@ -37,11 +38,15 @@ export default function PortfolioGrid() {
             <div className={`h-3 w-full ${item.color}`}></div>
 
             {/* Image */}
-            <div className="relative h-40 overflow-hidden">
-              <img
+            <div className="relative h-40 w-full overflow-hidden">
+              <Image
                 src={item.image}
                 alt={item.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw,
+                       (max-width: 1200px) 50vw,
+                       25vw"
               />
               {/* Optional overlay effect */}
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition duration-300"></div>

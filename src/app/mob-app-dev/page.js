@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function MobileAppSection() {
   return (
@@ -23,9 +24,11 @@ export default function MobileAppSection() {
           transition={{ duration: 0.8 }}
           className="order-2 md:order-1"
         >
-          <img
+          <Image
             src="/img/mobile-app.png"
             alt="Mobile App Illustration"
+            width={500}
+            height={500}
             className="w-full max-w-sm mx-auto md:max-w-sm"
           />
         </motion.div>
@@ -46,12 +49,7 @@ export default function MobileAppSection() {
             solutions into your existing or new systems to drive success.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
-            {[
-              "iOS App Development",
-              "Android App Development",
-              "Mobile Websites Development",
-              "Hybrid App Development",
-            ].map((service, idx) => (
+            {["iOS App Development", "Android App Development", "Mobile Websites Development", "Hybrid App Development"].map((service, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05 }}

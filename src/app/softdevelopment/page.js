@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Code2, ShieldCheck, RefreshCcw, ShoppingBag, LayoutGrid, Workflow } from 'lucide-react';
 
 export default function SoftwareDevSection() {
@@ -8,9 +9,11 @@ export default function SoftwareDevSection() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left: Illustration */}
         <div className="flex justify-center md:justify-start">
-          <img
+          <Image
             src="/img/Software-Development.png"
             alt="Software Development Illustration"
+            width={450}
+            height={400}
             className="w-80 md:w-[28rem] drop-shadow-xl"
           />
         </div>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutUs() {
   return (
     <section className="relative py-24 bg-gradient-to-br from-[#f3e7ff] via-[#e1f0ff] to-[#fbeeff] overflow-hidden">
@@ -10,10 +12,12 @@ export default function AboutUs() {
           
           {/* Image */}
           <div className="relative z-10">
-            <img
+            <Image
               src="/img/aboutus.png"
               alt="Team Illustration"
-              className="w-full rounded-xl shadow-2xl"
+              width={600}
+              height={400}
+              className="w-full h-auto rounded-xl shadow-2xl"
             />
           </div>
 

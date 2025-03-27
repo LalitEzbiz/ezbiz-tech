@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 
 export default function ConsultingSection() {
   return (
     <section className="bg-gradient-to-br from-white to-slate-100 py-16 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
+        
         <div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
             Expert <span className="text-blue-600">Consulting</span> Services
@@ -37,13 +38,15 @@ export default function ConsultingSection() {
           </div>
         </div>
 
-        {/* Image/Illustration */}
+        
         <div className="relative">
           <div className="w-full h-full rounded-3xl overflow-hidden shadow-xl">
-            <img
+            <Image
               src="/img/consulting.png"
               alt="Consulting Illustration"
               className="object-cover w-full h-full"
+              width={800} 
+              height={600} 
             />
           </div>
           <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-bounce">

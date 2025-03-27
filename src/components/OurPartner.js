@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image"; // ✅ Import Next.js Image
 
 const partners = [
   { name: "Google Partner", logo: "/img/google-partner.png" },
@@ -27,9 +28,11 @@ export default function OurPartners() {
               key={index}
               className="bg-white/10 border border-white/20 backdrop-blur-lg rounded-2xl p-6 flex items-center justify-center shadow-xl hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 hover:-translate-y-2"
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={partner.name}
+                width={100}
+                height={64}
                 className="h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
               />
             </div>

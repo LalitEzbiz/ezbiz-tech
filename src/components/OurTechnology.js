@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image"; // ✅ Import Next.js Image
 
 const techStack = [
   { name: "Angular", logo: "/img/angular.png" },
@@ -46,10 +47,12 @@ export default function OurTechnology() {
               key={index}
               className="bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl p-5 flex flex-col items-center justify-center text-white transition-transform transform hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             >
-              <img
+              <Image
                 src={tech.logo}
                 alt={tech.name}
-                className="w-14 h-14 object-contain mb-3"
+                width={56}
+                height={56}
+                className="object-contain mb-3"
               />
               <p className="text-sm font-medium">{tech.name}</p>
             </div>

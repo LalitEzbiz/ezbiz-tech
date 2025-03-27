@@ -72,8 +72,8 @@ export default function IndustriesWeServe() {
             </span>
           </h2>
           <p className="text-gray-600 mb-8 text-lg">
-            Business isn't one-size-fits-all. Every industry requires a tailored solution.
-            Here's how we’ve delivered custom success across domains.
+            Business isn&#39;t one-size-fits-all. Every industry requires a tailored solution.
+            Here&#39;s how we&#39;ve delivered custom success across domains.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
