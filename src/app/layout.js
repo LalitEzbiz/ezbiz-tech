@@ -1,5 +1,22 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutUs from "@/components/AboutUs";
+import Services from "@/components/Services";
+import WorkProcess from "@/components/WorkProcess";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import IndustriesWeServe from "@/components/Industries";
+import PortfolioGrid from "@/components/Portfolio";
+import OurTechnology from "@/components/OurTechnology";
+import OurPartners from "@/components/OurPartner";
+
+import ClientSlider from "@/components/OurClients";
+import Footer from "@/components/Footer";
+
+  
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +39,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header/>
+        <Navbar/>
         {children}
+       <Footer/>
+       
       </body>
     </html>
   );
