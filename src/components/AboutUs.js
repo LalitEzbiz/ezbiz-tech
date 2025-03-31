@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutUs() {
   return (
@@ -32,9 +33,11 @@ export default function AboutUs() {
               With expertise across domains, we focus on understanding your business deeply to deliver impactful digital products.
               From startups to global enterprises, we operate as true partners — building apps, platforms, and solutions with precision.
             </p>
+            <Link href="/learnmore">
             <button className="bg-purple-600 text-white px-6 py-2 rounded-xl hover:bg-purple-700 transition duration-300 shadow-md">
               Learn More
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -75,11 +75,11 @@ export default function PortfolioGrid() {
       </div>
 
       {/* View More Button */}
-      <div className="mt-14 text-center relative z-10">
+      {/* <div className="mt-14 text-center relative z-10">
         <button className="bg-gradient-to-r from-blue-600 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-pink-400/50 transition hover:scale-105">
           View More
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }
