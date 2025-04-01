@@ -5,10 +5,10 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaWh
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
+    firstName: '',  
     lastName: '',
     email: '',
-    mobile: '',
+    mobile: '', 
     message: ''
   });
 
@@ -17,7 +17,7 @@ export default function ContactUsPage() {
   };
 
   const handleSubmit = (e) => {
-  
+      
 
     e.preventDefault();
     console.log("Form Submitted", formData);

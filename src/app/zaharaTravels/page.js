@@ -143,7 +143,7 @@ export default function ZaharaToursProfile() {
               <SiHtml5 title="HTML5" className="text-orange-600" />
               <SiCss3 title="CSS3" className="text-blue-600" />
               <SiJavascript title="JavaScript" className="text-yellow-500" />
-              <SiJquery title="jQuery" className="text-blue-400" />
+              <SiJquery title="jQuery" className="text-blue-400"  />
               <DiPhp title="PHP" className="text-indigo-700" />
               <DiMysql title="MySQL" className="text-yellow-600" />
             </div>
