@@ -187,7 +187,7 @@ export default function AboutUs() {
             height={48}
           />
           <Image
-            src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png"
+            src="/img/aws.png"
             alt="AWS"
             width={120}
             height={48}

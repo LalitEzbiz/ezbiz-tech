@@ -1,29 +1,3 @@
-// export default function HeroSection() {
-//     return (
-//       <section className="relative h-[500px]  flex items-center justify-center bg-black">
-//         {/* Background Image */}
-//         <img
-//           src="/img/center.png"
-//           alt="Network Background"
-//           className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
-//         />
-  
-//         {/* Overlay */}
-//         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
-  
-//         {/* Content */}
-//         <div className="relative z-20 text-center px-4">
-//           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-wide">
-//             Your Technology Partner In
-//           </h1>
-//           <p className="text-cyan-400 text-xl sm:text-2xl md:text-3xl font-semibold">
-//             Software Development
-//           </p>
-//         </div>
-//       </section>
-//     );
-//   }
-  
 
 
 export default function HeroSection() {
