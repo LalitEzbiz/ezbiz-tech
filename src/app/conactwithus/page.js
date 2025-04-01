@@ -62,7 +62,7 @@ export default function ContactUs() {
           <div className="bg-white p-8 rounded-2xl shadow-xl">
             <h3 className="text-xl font-semibold text-blue-800 mb-2">ADDRESS</h3>
             <p>
-              Ebriks Technologies Pvt Ltd<br />
+              Ezbiz Technologies Pvt Ltd<br />
               Suit #405, H-28, Sector 63<br />
               Noida, Uttar Pradesh 201301
             </p>
@@ -70,7 +70,7 @@ export default function ContactUs() {
 
           <div className="bg-white p-8 rounded-2xl shadow-xl">
             <h3 className="text-xl font-semibold text-blue-800 mb-2">EMAIL</h3>
-            <p>info@ebrikssoft.com</p>
+            <p>info@ezbizsoft.com</p>
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-xl">
