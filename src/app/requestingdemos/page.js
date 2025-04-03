@@ -24,7 +24,7 @@ export default function ContactUs() {
     console.log("Form Submitted Data:", formData);
     // You can also reset the form here if needed:
     // setFormData({ firstName: "", lastName: "", email: "", mobile: "", message: "" });
-  };
+  };                                 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white py-12 px-4 sm:px-6 lg:px-8">

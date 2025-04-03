@@ -1,3 +1,4 @@
+
 // "use client";
 
 // import React, { useMemo } from "react";
@@ -6,13 +7,12 @@
 // import Link from "next/link";
 
 // const CRSPage = () => {
-
-
 //     const logos = [
 //         "/img/view-oman.jpg",
 //         "/img/downloadsss.jpg",
 //         "/img/download.jpg",
 //     ];
+
 //     // Animated floating particles
 //     const particles = useMemo(() => {
 //         return Array.from({ length: 25 }).map(() => ({
@@ -121,8 +121,14 @@
 //                             <li>Enables global travel market access.</li>
 //                         </ul>
 //                     </div>
-//                     <div>
-//                         <img src="/img/crs.png" alt="Benefits" className="rounded-xl shadow-lg" />
+//                     <div className="relative w-full h-64">
+//                         <Image 
+//                             src="/img/crs.png" 
+//                             alt="Benefits" 
+//                             fill
+//                             className="rounded-xl shadow-lg object-cover"
+//                             sizes="(max-width: 768px) 100vw, 50vw"
+//                         />
 //                     </div>
 //                 </div>
 //             </section>
@@ -143,8 +149,14 @@
 //             <section className="py-16 px-6">
 //                 <h3 className="text-3xl font-semibold text-center mb-12">Tech Stack</h3>
 //                 <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-//                     <div>
-//                         <img src="/img/tech.png" alt="Tech Stack" className="rounded-xl shadow-lg" />
+//                     <div className="relative w-full h-64">
+//                         <Image 
+//                             src="/img/tech.png" 
+//                             alt="Tech Stack" 
+//                             fill
+//                             className="rounded-xl shadow-lg object-cover"
+//                             sizes="(max-width: 768px) 100vw, 50vw"
+//                         />
 //                     </div>
 //                     <div className="space-y-4">
 //                         <div>
@@ -208,8 +220,9 @@
 //                                     <Image
 //                                         src={logo}
 //                                         alt={`Logo ${index + 1}`}
-//                                         layout="fill"
+//                                         fill
 //                                         objectFit="contain"
+//                                         sizes="(max-width: 768px) 100px, 150px"
 //                                     />
 //                                 </div>
 //                             </motion.div>
@@ -217,7 +230,6 @@
 //                     </div>
 //                 </div>
 //             </section>
-
 
 //             <section className="bg-white py-20 px-4 md:px-10 lg:px-20">
 //                 <div className="max-w-7xl mx-auto text-center mb-12">
@@ -232,11 +244,16 @@
 //                 <div className="grid md:grid-cols-2 gap-10 items-start">
 //                     <div className="flex justify-center">
 //                         <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-2xl shadow-lg animate-fade-left">
-//                             <img
-//                                 src="/img/Thinking.png"
-//                                 alt="FAQ Illustration"
-//                                 className="w-full max-w-sm rounded-xl"
-//                             />
+//                             <div className="relative w-full h-96"> {/* Increased height */}
+//                                 <Image
+//                                     src="/img/Thinking.png"
+//                                     alt="FAQ Illustration"
+//                                     fill
+//                                     className="rounded-xl object-contain"  // Changed to contain
+//                                     sizes="(max-width: 768px) 100vw, 50vw"
+//                                     priority={true}  // Added priority
+//                                 />
+//                             </div>
 //                         </div>
 //                     </div>
 
@@ -249,7 +266,7 @@
 //                             },
 //                             {
 //                                 question: 'Do I have to pay to fix a bug attack?',
-//                                 answer: "No, it's covered in support.",
+//                                 answer: "No, it&apos;s covered in support.",
 //                             },
 //                             {
 //                                 question: 'Do you offer free maintenance support?',
@@ -257,7 +274,7 @@
 //                             },
 //                             {
 //                                 question: 'Is the personalized demo free?',
-//                                 answer: 'Yes, it’s completely free.',
+//                                 answer: 'Yes, it&apos;s completely free.',
 //                             },
 //                             {
 //                                 question: 'Do you guys provide a mobile application too?',
@@ -265,7 +282,7 @@
 //                             },
 //                             {
 //                                 question: 'Does web application is responsive?',
-//                                 answer: 'Absolutely, it’s fully responsive.',
+//                                 answer: 'Absolutely, it&apos;s fully responsive.',
 //                             },
 //                         ].map((item, index) => (
 //                             <details
@@ -284,18 +301,16 @@
 //                 <div className="text-center mt-20">
 //                     <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 p-6 rounded-2xl shadow-xl animate-fade-up">
 //                         <h3 className="text-white text-2xl font-semibold mb-2">
-//                             Got a Project? Let's Collaborate
+//                             Got a Project? Let&apos;s Collaborate
 //                         </h3>
 //                         <Link href="/connectWithUs">
-//                          <button className="bg-white text-purple-700 font-bold px-5 py-2 rounded shadow hover:bg-gray-100 transition">
-//                             Contact Us
-//                          </button>
+//                             <button className="bg-white text-purple-700 font-bold px-5 py-2 rounded shadow hover:bg-gray-100 transition">
+//                                 Contact Us
+//                             </button>
 //                         </Link>
-                        
 //                     </div>
 //                 </div>
 //             </section>
-
 //         </div>
 //     );
 // };
@@ -306,9 +321,10 @@
 
 
 
+
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -319,7 +335,13 @@ const CRSPage = () => {
         "/img/downloadsss.jpg",
         "/img/download.jpg",
     ];
-    
+
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     // Animated floating particles
     const particles = useMemo(() => {
         return Array.from({ length: 25 }).map(() => ({
@@ -336,21 +358,23 @@ const CRSPage = () => {
             {/* Hero Section with Animated Particles */}
             <div className="relative w-full h-[300px] bg-gradient-to-r from-black via-slate-900 to-blue-900 text-white overflow-hidden">
                 {/* Animated Crystals */}
-                <div className="absolute inset-0 z-0">
-                    {particles.map((p, i) => (
-                        <div
-                            key={i}
-                            className={`absolute bg-cyan-400/20 backdrop-blur-sm ${p.shape}`}
-                            style={{
-                                width: p.size,
-                                height: p.size,
-                                top: p.top,
-                                left: p.left,
-                                animation: `float ${p.duration} ease-in-out infinite`
-                            }}
-                        ></div>
-                    ))}
-                </div>
+                {isClient && (
+                    <div className="absolute inset-0 z-0">
+                        {particles.map((p, i) => (
+                            <div
+                                key={i}
+                                className={`absolute bg-cyan-400/20 backdrop-blur-sm ${p.shape}`}
+                                style={{
+                                    width: p.size,
+                                    height: p.size,
+                                    top: p.top,
+                                    left: p.left,
+                                    animation: `float ${p.duration} ease-in-out infinite`
+                                }}
+                            ></div>
+                        ))}
+                    </div>
+                )}
 
                 {/* Hero Content */}
                 <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 flex flex-col justify-center h-full">
@@ -360,7 +384,7 @@ const CRSPage = () => {
                         transition={{ duration: 1 }}
                         className="text-4xl md:text-6xl font-extrabold text-cyan-400 drop-shadow-md"
                     >
-                        Central Reservation <br /> Systems
+                        Central Reservation Systems
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -387,21 +411,21 @@ const CRSPage = () => {
 
                 {/* Animation Keyframe */}
                 <style jsx>{`
-          @keyframes float {
-            0% {
-              transform: translateY(0px);
-              opacity: 1;
-            }
-            50% {
-              transform: translateY(-15px);
-              opacity: 0.6;
-            }
-            100% {
-              transform: translateY(0px);
-              opacity: 1;
-            }
-          }
-        `}</style>
+                    @keyframes float {
+                        0% {
+                            transform: translateY(0px);
+                            opacity: 1;
+                        }
+                        50% {
+                            transform: translateY(-15px);
+                            opacity: 0.6;
+                        }
+                        100% {
+                            transform: translateY(0px);
+                            opacity: 1;
+                        }
+                    }
+                `}</style>
             </div>
 
             {/* About Section */}
@@ -429,9 +453,9 @@ const CRSPage = () => {
                         </ul>
                     </div>
                     <div className="relative w-full h-64">
-                        <Image 
-                            src="/img/crs.png" 
-                            alt="Benefits" 
+                        <Image
+                            src="/img/crs.png"
+                            alt="Benefits"
                             fill
                             className="rounded-xl shadow-lg object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
@@ -457,9 +481,9 @@ const CRSPage = () => {
                 <h3 className="text-3xl font-semibold text-center mb-12">Tech Stack</h3>
                 <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
                     <div className="relative w-full h-64">
-                        <Image 
-                            src="/img/tech.png" 
-                            alt="Tech Stack" 
+                        <Image
+                            src="/img/tech.png"
+                            alt="Tech Stack"
                             fill
                             className="rounded-xl shadow-lg object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
@@ -511,6 +535,11 @@ const CRSPage = () => {
                         <p className="mt-2 text-sm sm:text-base text-blue-100">
                             Empowering users across the globe with reliable, fast, and scalable solutions.
                         </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                            <span className="px-3 py-1 bg-white/10 rounded-full text-xs">EV/LEW</span>
+                            <span className="px-3 py-1 bg-white/10 rounded-full text-xs">Your personal use only</span>
+                            <span className="px-3 py-1 bg-white/10 rounded-full text-xs">About Your</span>
+                        </div>
                     </motion.div>
 
                     <div className="flex gap-4 flex-wrap justify-center">
@@ -548,19 +577,17 @@ const CRSPage = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-10 items-start">
+                <div className="grid md:grid-cols-2 gap-10 items-center"> {/* Changed items-start to items-center */}
                     <div className="flex justify-center">
-                        <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-2xl shadow-lg animate-fade-left">
-                            <div className="relative w-full h-96"> {/* Increased height */}
-                                <Image
-                                    src="/img/Thinking.png"
-                                    alt="FAQ Illustration"
-                                    fill
-                                    className="rounded-xl object-contain"  // Changed to contain
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority={true}  // Added priority
-                                />
-                            </div>
+                        <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-2xl shadow-lg animate-fade-left w-full h-full min-h-[400px] relative">
+                            <Image
+                                src="/img/thinkinggs.png"
+                                alt="FAQ Illustration"
+                                fill
+                                className="rounded-xl object-contain"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority={true}
+                            />
                         </div>
                     </div>
 
@@ -568,12 +595,11 @@ const CRSPage = () => {
                         {[
                             {
                                 question: 'How user friendly is Ezbiz CRS?',
-                                answer:
-                                    'Ezbiz CRS is designed and coded to support users in the simplest way possible while still supporting high-end features.',
+                                answer: 'Ezbiz CRS is designed and coded to support users in the simplest way possible while still supporting high-end features.',
                             },
                             {
                                 question: 'Do I have to pay to fix a bug attack?',
-                                answer: "No, it&apos;s covered in support.",
+                                answer: "No, it's covered in support.",
                             },
                             {
                                 question: 'Do you offer free maintenance support?',
@@ -581,7 +607,7 @@ const CRSPage = () => {
                             },
                             {
                                 question: 'Is the personalized demo free?',
-                                answer: 'Yes, it&apos;s completely free.',
+                                answer: 'Yes, it\'s completely free.',
                             },
                             {
                                 question: 'Do you guys provide a mobile application too?',
@@ -589,7 +615,7 @@ const CRSPage = () => {
                             },
                             {
                                 question: 'Does web application is responsive?',
-                                answer: 'Absolutely, it&apos;s fully responsive.',
+                                answer: 'Absolutely, it\'s fully responsive.',
                             },
                         ].map((item, index) => (
                             <details
@@ -602,19 +628,6 @@ const CRSPage = () => {
                                 <p className="mt-2 text-sm text-gray-600">{item.answer}</p>
                             </details>
                         ))}
-                    </div>
-                </div>
-
-                <div className="text-center mt-20">
-                    <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 p-6 rounded-2xl shadow-xl animate-fade-up">
-                        <h3 className="text-white text-2xl font-semibold mb-2">
-                            Got a Project? Let&apos;s Collaborate
-                        </h3>
-                        <Link href="/connectWithUs">
-                            <button className="bg-white text-purple-700 font-bold px-5 py-2 rounded shadow hover:bg-gray-100 transition">
-                                Contact Us
-                            </button>
-                        </Link>
                     </div>
                 </div>
             </section>
